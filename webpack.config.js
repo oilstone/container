@@ -7,7 +7,8 @@ module.exports = {
         filename: 'container.js',
         library: 'container',
         libraryTarget: 'umd',
-        publicPath: '/'
+        publicPath: '/',
+        globalObject: 'this',
     },
     devServer: {
         contentBase: './dist',
