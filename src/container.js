@@ -44,11 +44,15 @@ class Container {
     }
 
     boot() {
+        const promises = [];
+
         this.#providers.forEach(provider => {
-            provider.execute('boot', this);
+            promises.push(
+                provider.execute('boot', this)
+            );
         });
 
-        return this;
+        return Promise.all(promises);
     }
 }
 
